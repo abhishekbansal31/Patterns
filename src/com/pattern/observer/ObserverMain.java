@@ -20,6 +20,7 @@ public class ObserverMain {
         System.out.println("------------------ Measurements Changed -----------------");
 
         subject.measurementsChanged(29.9, 5.5, 25.3);
+        System.out.println();
 
     }
 }
