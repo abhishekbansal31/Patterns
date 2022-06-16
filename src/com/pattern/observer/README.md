@@ -1,0 +1,1 @@
+Observer pattern defines a one to many dependency between objects so that when one object changes state, all of it's dependies are notified and updated automatically.
