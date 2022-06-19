@@ -13,18 +13,26 @@ public class PizzaStoreMain {
             PizzaStoreFactory factory = new PizzaStoreFactory();
             PizzaStore store = factory.getPizzaStore(country);
 
-            store.order("Cheese");
-            store.order("Veggie");
+            if(store!=null) {
+                store.order("Cheese");
+                store.order("Veggie");
+            } else {
+                System.out.println(country + " : Out of service");
+            }
 
             country = sc.nextLine();
             store = factory.getPizzaStore(country);
 
-            store.order("Cheese");
-            store.order("Veggie");
+            if(store!=null) {
+                store.order("Cheese");
+                store.order("Veggie");
+            } else {
+                System.out.println(country + " : Out of service");
+            }
 
             sc.close();
         } catch(Exception e) {
-            System.out.println("Exception");
+            System.out.println("Exception: "+e.getMessage());
         }
         
     }

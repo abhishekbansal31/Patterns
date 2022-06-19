@@ -2,11 +2,12 @@ package com.pattern.factory.data.item.pizza;
 
 import com.pattern.factory.data.item.ingredients.IngredientsFactory;
 
-public class NYCheeseStylePizza implements Pizza  {
+public class NYCheeseStylePizza extends PizzaAbstract {
 
     @Override
     public void prepare(IngredientsFactory factory) {
         // TODO Auto-generated method stub
+        this.setIngredientsFactory(factory);
         
     }
 
