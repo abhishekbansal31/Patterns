@@ -1,15 +1,15 @@
 package com.pattern.factory.data.store;
 
-import com.pattern.factory.data.item.ingredients.IngredientsFactory;
+import com.pattern.factory.data.item.ingredients.PizzaIngredientsFactory;
 import com.pattern.factory.data.item.pizza.Pizza;
 
 public abstract class PizzaStore implements PizzaStoreInterface {
-    private IngredientsFactory ingredientsFactory = null;
+    private PizzaIngredientsFactory ingredientsFactory = null;
     
     public Pizza order(String type) {
         Pizza pizza = createPizza(type);
         if(pizza!=null) {
-            pizza.prepare(this.getIngredientsFactory());
+            pizza.prepare();
             pizza.bake();
             pizza.cut();
             pizza.box();
@@ -19,12 +19,12 @@ public abstract class PizzaStore implements PizzaStoreInterface {
     protected abstract Pizza createPizza(String type);
 
 
-    private IngredientsFactory getIngredientsFactory() {
+    protected PizzaIngredientsFactory getIngredientsFactory() {
         return this.ingredientsFactory;
     }
 
     @Override
-    public void setIngredientsFactory(IngredientsFactory factory) {
+    public void setIngredientsFactory(PizzaIngredientsFactory factory) {
         this.ingredientsFactory = factory;
     }
 }
