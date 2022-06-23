@@ -6,8 +6,8 @@ import com.pattern.factory.data.store.ChicagoPizzaStore;
 import com.pattern.factory.data.store.NYPizzaStore;
 import com.pattern.factory.data.store.PizzaStore;
 
-public class PizzaStoreFactory {
-    protected PizzaStore getPizzaStore(String country) {
+public class PizzaStoreFactory implements PizzaStoreProvider {
+    public PizzaStore getPizzaStore(String country) {
         PizzaStore store = null;
         if(country.equals("NewYork")) {
             store = new NYPizzaStore(new NYPizzaIngredientsFactory());

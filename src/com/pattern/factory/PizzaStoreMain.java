@@ -10,7 +10,7 @@ public class PizzaStoreMain {
             Scanner sc = new Scanner(System.in);
             String country = sc.nextLine();
 
-            PizzaStoreFactory factory = new PizzaStoreFactory();
+            PizzaStoreProvider factory = new PizzaStoreFactory();
             PizzaStore store = factory.getPizzaStore(country);
 
             if(store!=null) {

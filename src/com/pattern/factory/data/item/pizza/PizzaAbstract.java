@@ -7,7 +7,7 @@ import com.pattern.factory.data.item.ingredients.products.dough.Dough;
 import com.pattern.factory.data.item.ingredients.products.sauce.Sauce;
 
 public abstract class PizzaAbstract implements Pizza {
-    private PizzaIngredientsFactory ingredientsFactory= null;
+    private PizzaIngredientsFactory ingredientsFactory = null;     // Abstract Factory
     
     private Dough dough;
     private Sauce sauce;
@@ -19,8 +19,11 @@ public abstract class PizzaAbstract implements Pizza {
     }
     
     @Override
-    public void setIngredientsFactory(PizzaIngredientsFactory ingredientsFactory) {
-        this.ingredientsFactory= ingredientsFactory;
+    public void setIngredientsFactory(PizzaIngredientsFactory ingredientsFactory) throws NullPointerException {
+        if(ingredientsFactory == null) {
+            throw new NullPointerException("chdib");
+        }
+        this.ingredientsFactory = ingredientsFactory;
     }
 
     public Dough getDough() {

@@ -4,7 +4,7 @@ import com.pattern.factory.data.item.ingredients.PizzaIngredientsFactory;
 
 public class ChicagoCheeseStylePizza extends PizzaAbstract {
 
-    public ChicagoCheeseStylePizza(PizzaIngredientsFactory factory) {
+    public ChicagoCheeseStylePizza(PizzaIngredientsFactory factory) throws NullPointerException {
         this.setIngredientsFactory(factory);
     }
 }

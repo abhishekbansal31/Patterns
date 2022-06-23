@@ -7,5 +7,5 @@ public interface Pizza {
     void bake();
     void cut();
     void box();
-    void setIngredientsFactory(PizzaIngredientsFactory factory);
+    void setIngredientsFactory(PizzaIngredientsFactory factory) throws NullPointerException ;
 }
